@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <ImageView
+        android:id="@+id/ivCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTLinfo"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ok_info_r"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTLwarning"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/waring_info_r"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTLconnectionError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_error_l"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo" />
+
+    <ImageView
+        android:id="@+id/ivTLconnectionOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_ok_l"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo" />
+
+    <TextView
+        android:id="@+id/tvTLpressureUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="@string/str_bar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <TextView
+        android:id="@+id/tvTLpressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
+        android:id="@+id/tvTLtempUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="@string/str_celsius"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTLtempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTLbatUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="@string/str_volt"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTLbatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTLinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <ImageView
+        android:id="@+id/ivTRinfo"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ok_info_r"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTRwarning"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/waring_info_r"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTRconnectionError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_error_r"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo" />
+
+    <ImageView
+        android:id="@+id/ivTRconnectionOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_ok_r"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo" />
+
+    <TextView
+        android:id="@+id/tvTRpressureUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="@string/str_bar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <TextView
+        android:id="@+id/tvTRpressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
+        android:id="@+id/tvTRtempUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="@string/str_celsius"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTRtempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTRbatUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="@string/str_volt"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/tvTRbatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivTRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivTRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivTRinfo"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <ImageView
+        android:id="@+id/ivRLinfo"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ok_info_t"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/ivRLwarning"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/waring_info_t"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/ivRLconnectionError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_error_l"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo" />
+
+    <ImageView
+        android:id="@+id/ivRLconnectionOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_ok_l"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo" />
+
+    <TextView
+        android:id="@+id/tvRLpressureUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="@string/str_bar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <TextView
+        android:id="@+id/tvRLpressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <TextView
+        android:id="@+id/tvRLtempUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="@string/str_celsius"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRLtempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRLbatUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="@string/str_volt"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRLbatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRLinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRLinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRLinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRLinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <ImageView
+        android:id="@+id/ivRRinfo"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ok_info_t"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/ivRRwarning"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/waring_info_t"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/ivRRconnectionError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_error_r"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo" />
+
+    <ImageView
+        android:id="@+id/ivRRconnectionOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/connect_ok_r"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo" />
+
+    <TextView
+        android:id="@+id/tvRRpressureUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="@string/str_bar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <TextView
+        android:id="@+id/tvRRpressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <TextView
+        android:id="@+id/tvRRtempUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="@string/str_celsius"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRRtempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRRbatUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="@string/str_volt"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+        android:id="@+id/tvRRbatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:text="@string/str_empty_value"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRRinfo"
+        app:layout_constraintEnd_toEndOf="@+id/ivRRinfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ivRRinfo"
+        app:layout_constraintTop_toTopOf="@+id/ivRRinfo"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <ImageView
+        android:id="@+id/ivConnected"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_connected"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivTypeTires"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivDisconnected"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_disconnected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivTypeTires"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/ivTypeTires"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/summer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/btnBind"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_binding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>

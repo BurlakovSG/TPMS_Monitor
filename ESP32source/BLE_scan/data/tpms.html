@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		
+		<script type = "text/javascript">
+			var host = window.location.hostname;
+			
+			function start(host){
+				var socket = new WebSocket("ws://" + host + "/ws_tpms");
+	 
+				socket.onopen = function() {
+					document.getElementById("connectionstate").innerHTML = "Connected";
+					<!-- window.alert("Connected"); -->
+				};
+		 
+				socket.onmessage = function(evt) {
+					var json = JSON.parse(evt.data);
+					
+					if (json.type == "TPMS") {
+						document.getElementById(json.data.place).innerHTML = "ID: " + json.data.ID 
+																		   + "<br>Pressure: " + json.data.pressure 
+																		   + "<br>Temperature: " + json.data.temperature + "*C" 
+																		   + "<br>Battery: " + json.data.bat_voltage + "V";
+					}
+				};
+				
+				socket.onclose = function(event) {
+					document.getElementById("connectionstate").innerHTML = "Disconnected";
+					setTimeout(function(){start(host)}, 5000);
+				};
+			}
+			
+			start(host);
+ 
+		</script>
+	</head>
+ 
+	<body>
+		<strong>Connection State:</strong>
+		<div id="connectionstate">N/A</div>
+		<hr>   
+		
+		<table border="0" cellspacing="0" cellpadding="3" style="width:420px">
+			<tr>
+				<td style="width:50%">
+					<div id="top_left">N/A</div>
+				</td>
+				<td style="width:50%">
+					<div id="top_right">N/A</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="rear_left">N/A</div>
+				</td>
+				<td>
+					<div id="rear_right">N/A</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

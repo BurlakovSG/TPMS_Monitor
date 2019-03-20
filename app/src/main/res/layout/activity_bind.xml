@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".BindActivity">
+
+    <ImageView
+        android:id="@+id/ivCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_noexchange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <ImageView
+        android:id="@+id/ivTLTRexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_tl_tr"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivRLRRexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_rl_rr"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTLRLexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_tl_rl"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTRRRexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_tr_rr"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTLRRexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_tl_rr"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTRRLexchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/exchange_tr_rl"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTLselected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:onClick="onClick"
+        android:src="@drawable/tires_d"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivTRselected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:onClick="onClick"
+        android:src="@drawable/tires_d"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivRLselected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:onClick="onClick"
+        android:src="@drawable/tires_d"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ivRRselected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:onClick="onClick"
+        android:src="@drawable/tires_d"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar" />
+
+    <TextView
+        android:id="@+id/tvTL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sensor_id"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etTLsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etTLsensorID" />
+
+    <EditText
+        android:id="@+id/etTLsensorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:inputType="textCapCharacters"
+        android:lineSpacingExtra="0sp"
+        android:maxLength="6"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/btnTLbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="@string/start_auto_bind"
+        app:layout_constraintEnd_toEndOf="@+id/etTLsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etTLsensorID"
+        app:layout_constraintTop_toBottomOf="@+id/etTLsensorID" />
+
+    <TextView
+        android:id="@+id/tvTR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sensor_id"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etTRsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etTRsensorID" />
+
+    <EditText
+        android:id="@+id/etTRsensorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:inputType="textCapCharacters"
+        android:lineSpacingExtra="0sp"
+        android:maxLength="6"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/btnTRbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="@string/start_auto_bind"
+        app:layout_constraintEnd_toEndOf="@+id/etTRsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etTRsensorID"
+        app:layout_constraintTop_toBottomOf="@+id/etTRsensorID" />
+
+    <TextView
+        android:id="@+id/tvRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sensor_id"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etRLsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etRLsensorID" />
+
+    <EditText
+        android:id="@+id/etRLsensorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:inputType="textCapCharacters"
+        android:lineSpacingExtra="0sp"
+        android:maxLength="6"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Button
+        android:id="@+id/btnRLbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="@string/start_auto_bind"
+        app:layout_constraintEnd_toEndOf="@+id/etRLsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etRLsensorID"
+        app:layout_constraintTop_toBottomOf="@+id/etRLsensorID" />
+
+    <TextView
+        android:id="@+id/tvRR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sensor_id"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etRRsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etRRsensorID" />
+
+    <EditText
+        android:id="@+id/etRRsensorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:inputType="textCapCharacters"
+        android:lineSpacingExtra="0sp"
+        android:maxLength="6"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Button
+        android:id="@+id/btnRRbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="@string/start_auto_bind"
+        app:layout_constraintEnd_toEndOf="@+id/etRRsensorID"
+        app:layout_constraintStart_toStartOf="@+id/etRRsensorID"
+        app:layout_constraintTop_toBottomOf="@+id/etRRsensorID" />
+
+    <Button
+        android:id="@+id/btnBindAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:onClick="onClick"
+        android:text="@string/start_auto_bind_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCar">
+
+        <requestFocus />
+    </Button>
+
+    <ImageView
+        android:id="@+id/ibTLTRexchange"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ibRLRRexchange"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="53dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ibDiagonalExchange"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ibTLRLexchange"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintStart_toStartOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+    <ImageView
+        android:id="@+id/ibTRRRexchange"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCar"
+        app:layout_constraintEnd_toEndOf="@+id/ivCar"
+        app:layout_constraintTop_toTopOf="@+id/ivCar" />
+
+</android.support.constraint.ConstraintLayout>

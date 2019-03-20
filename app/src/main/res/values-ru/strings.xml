@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">TPMS монитор</string>
+    <string name="str_bar">бар</string>
+    <string name="str_celsius">°C</string>
+    <string name="str_volt">В</string>
+    <string name="str_empty_value">- -</string>
+    <string name="sensor_id">ID сенсора:</string>
+    <string name="start_auto_bind">АВТО ПОИСК</string>
+    <string name="stop_auto_bind">ПРЕРВАТЬ</string>
+    <string name="start_auto_bind_all">ПРИВЯЗАТЬ ВСЕ ДАТЧИКИ</string>
+    <string name="stop_auto_bind_all">ОСТАНОВИТЬ ПОИСК</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_bind">Привязка датчиков</string>
+    <string name="websocket_settings">Настройки WebSocket</string>
+    <string name="ip_address">IP-адрес</string>
+    <string name="ping_interval">Интервал опроса</string>
+    <string name="tire_settings">Настройки шин</string>
+    <string name="type_tires">Тип шин</string>
+    <string name="maximum_pressure_front_tire">Максимальное давление в передних колёсах</string>
+    <string name="minimum_pressure_front_tire">Минимальное давление в передних колёсах</string>
+    <string name="maximum_pressure_rear_tire">Максимальное давление в задних колёсах</string>
+    <string name="minimum_pressure_rear_tire">Минимальное давление в задних колёсах</string>
+    <string name="maximum_temperature_tire">Максимальная температура колеса</string>
+    <string name="data_timeout">Таймаут валидности данных</string>
+    <string name="front_left">переднем левом</string>
+    <string name="front_right">переднем правом</string>
+    <string name="rear_left">заднем левом</string>
+    <string name="rear_right">заднем правом</string>
+    <string name="leak_detected">Обнаружена утечка в %1$s колесе</string>
+    <string name="lower_pressure">Давление ниже нормы в %1$s колесе</string>
+    <string name="higher_pressure">Давление выше нормы в %1$s колесе</string>
+    <string name="higher_temperature">Температура выше нормы в %1$s колесе</string>
+
+    <string-array name="list_type_tires_name">
+        <item>Летние</item>
+        <item>Зимние</item>
+        <item>Всесезонные</item>
+    </string-array>
+    <string name="service_running">Сервис запущен</string>
+    <string name="system_connected">Адаптер подключен</string>
+    <string name="reconnect">Переподключение к адаптеру</string>
+
+</resources>

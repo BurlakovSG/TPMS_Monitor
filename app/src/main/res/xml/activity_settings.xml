@@ -1,0 +1,77 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Settings">
+    <PreferenceCategory android:title="@string/websocket_settings">
+        <EditTextPreference
+            android:defaultValue="192.168.1.1"
+            android:key="etpIPaddress"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/ip_address" />
+
+        <EditTextPreference
+            android:defaultValue="10"
+            android:inputType="number"
+            android:key="etpPingInterval"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/ping_interval" />
+
+        <EditTextPreference
+            android:defaultValue="10"
+            android:inputType="number"
+            android:key="etpDataTimeout"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/data_timeout" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/tire_settings">
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/list_type_tires_name"
+            android:entryValues="@array/list_type_tires_value"
+            android:key="lpTypeTires"
+            android:title="@string/type_tires" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            android:key="etpMaxFrontTirePressure"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/maximum_pressure_front_tire" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            android:key="etpMinFrontTirePressure"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/minimum_pressure_front_tire" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            android:key="etpMaxRearTirePressure"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/maximum_pressure_rear_tire" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            android:key="etpMinRearTirePressure"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/minimum_pressure_rear_tire" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            android:key="etpMaxTireTemperature"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/maximum_temperature_tire" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
